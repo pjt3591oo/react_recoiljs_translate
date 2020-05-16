@@ -1,4 +1,4 @@
-# CoreS
+# Cores
 
 ## <RecoilRoot />
 

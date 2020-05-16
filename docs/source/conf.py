@@ -23,7 +23,7 @@ source_parsers = {
 
 # -- Project information -----------------------------------------------------
 
-project = 'A state management library for React Translate'
+project = 'Recoiljs Library'
 copyright = '2020, pjt3591oo'
 author = 'pjt3591oo'
 

@@ -1,9 +1,6 @@
-.. Nest.js Of Node.js translate documentation master file, created by
-   sphinx-quickstart on Mon Jan  7 17:01:40 2020.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+.. Recoiljs
 
-효율적이고 확장 가능한 Node.js기반 서버 프레임워크
+A state management library for React Translate
 =====================================================
 
 해당 문서는 recoiljs_ **0.0.7 버전** 기준으로 작성된 문서입니다.
