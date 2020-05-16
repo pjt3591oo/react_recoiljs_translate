@@ -1,0 +1,317 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Lifecycle Events &mdash; Nest.js Translate 5 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Platform Agnosticism" href="platform_agnosticism.html" />
+    <link rel="prev" title="Injection Scopes" href="injection_scopes.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Nest.js Translate
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">INTRODUCTION</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/introduction.html">Introduction</a></li>
+</ul>
+<p class="caption"><span class="caption-text">OVERVIEW</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/first_step.html">First step</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/controllers.html">Controllers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/providers.html">Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/modules.html">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/middleware.html">Middleware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/exception_filters.html">Exception Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/pipes.html">Pipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/guards.html">Guards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/interceptors.html">Interceptors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/custom_decorators.html">Custom Decorators</a></li>
+</ul>
+<p class="caption"><span class="caption-text">FUNDAMENTALS</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="custom_providers.html">Custom Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="asynchronous_providers.html">Asynchronous Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dynamic_modules.html">Dynamic Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="circular_dependency.html">Circular Dependency</a></li>
+<li class="toctree-l1"><a class="reference internal" href="injection_scopes.html">Injection Scopes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Lifecycle Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="platform_agnosticism.html">Platform Agnosticism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Testing</a></li>
+</ul>
+<p class="caption"><span class="caption-text">TECHNIQUES</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../techniques/authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techniques/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techniques/mongo.html">Mongo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techniques/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techniques/validation.html">Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techniques/caching.html">Caching</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techniques/serialization.html">Serialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techniques/task_scheduling.html">Task Scheduling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techniques/compression.html">Compression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techniques/security.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techniques/queues.html">Queues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techniques/logger.html">Logger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techniques/file_upload.html">File Upload</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techniques/http_module.html">Http Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techniques/model-view-controller.html">Model-View_Controller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techniques/performance.html">Performance</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GRAPHQL</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../graphql/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graphql/resolvers.html">Resolver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graphql/mutations.html">Mutations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graphql/subscriptions.html">Subscriptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graphql/scalars.html">Scalars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graphql/tooling.html">Tolling</a></li>
+</ul>
+<p class="caption"><span class="caption-text">WEBSOCKETS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../websockets/gateways.html">Gateways</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../websockets/exception_filters.html">Exception Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../websockets/pipes.html">Pipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../websockets/guards.html">Guards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../websockets/interceptors.html">Interceptors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../websockets/adapters.html">Adapters</a></li>
+</ul>
+<p class="caption"><span class="caption-text">MICROSERVICES</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../microservices/overview.html">Overvice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../microservices/redis.html">Redis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../microservices/MQTT.html">MQTT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../microservices/NATS.html">NATS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../microservices/RabbitMQ.html">RabbitMQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../microservices/gRPC.html">gRPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../microservices/exception_filters.html">Exception Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../microservices/pipes.html">Pipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../microservices/guards.html">Guards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../microservices/interceptors.html">Interceptors</a></li>
+</ul>
+<p class="caption"><span class="caption-text">APPLICATION CONTEXT</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../application_context.html">Application Context</a></li>
+</ul>
+<p class="caption"><span class="caption-text">CLI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cli/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/workspaces.html">Workspaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/libraries.html">Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/scripts.html">Scripts</a></li>
+</ul>
+<p class="caption"><span class="caption-text">RECIPES</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/TypeORM.html">TypeORM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/mongoose.html">Mongoose</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/sequelize.html">Sequelize</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/CQRS.html">CQRS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/OpenAPI.html">OpenAPI (Swagger)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/prisma.html">Prisma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/health_checks.html">Health Checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/CRUD_utilities.html">CRUD Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/hot_reload.html">Hot Loads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/serve_static.html">Server Static</a></li>
+</ul>
+<p class="caption"><span class="caption-text">FAQ</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../faq/HTTP_adapter.html">HTTP adapter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/Global_path_prefix.html">Global path prefix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/Hybrid_application.html">Hybrid application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/HTTPS_multiple_servers.html">HTTPS &amp; multiple servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/examples.html">Example</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Migration Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../migration_guide.html">Migration Guide</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Nest.js Translate</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Lifecycle Events</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/fundamentals/lifecycle_events.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="lifecycle-events">
+<h1>Lifecycle Events<a class="headerlink" href="#lifecycle-events" title="Permalink to this headline">¶</a></h1>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="platform_agnosticism.html" class="btn btn-neutral float-right" title="Platform Agnosticism" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="injection_scopes.html" class="btn btn-neutral float-left" title="Injection Scopes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, pjt3591oo
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

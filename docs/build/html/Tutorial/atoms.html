@@ -1,0 +1,332 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Atoms &mdash; A state management library for React Translate 5 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Selectors" href="selector.html" />
+    <link rel="prev" title="Intro" href="intro.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> A state management library for React Translate
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/gettingStarted.html">Getting Started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Intro</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Atoms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="selector.html">Selectors</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../APIReference/core.html">CoreS</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">A state management library for React Translate</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Atoms</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Tutorial/atoms.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="atoms">
+<h1>Atoms<a class="headerlink" href="#atoms" title="Permalink to this headline">¶</a></h1>
+<p>Atoms은 애플리케이션 상태에 대한 신뢰를 제공합니다. 우리의 Todo List의 신뢰는 각각의 객체로 저장된 할 일 입니다.</p>
+<p>atom() 함수를 호출하여 리스트로 정의된 Atom을 생성합니다.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">todoListState</span> <span class="o">=</span> <span class="nx">atom</span><span class="p">({</span>
+  <span class="nx">key</span><span class="o">:</span> <span class="s1">&#39;todoListState&#39;</span><span class="p">,</span>
+  <span class="k">default</span><span class="o">:</span> <span class="p">[],</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>아톰에 고유키를 부여하고 기본값을 빈 배열로 초기화 합니다. 이 아톰의 값을 읽기위해 useRecoilValue() 후크를 사용합니다.</p>
+<blockquote>
+<div><p>참고: useRecoilValue()는 아톰의 값을 오직 읽는것만 가능, useRecoilState()는 useState()와 유사한 형태로 동작</p>
+</div></blockquote>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span>function TodoList() {
+  const todoList = useRecoilValue(todoListState);
+
+  return (
+    &lt;&gt;
+      {/* &lt;TodoListStats /&gt; */}
+      {/* &lt;TodoListFilters /&gt; */}
+      &lt;TodoItemCreator /&gt;
+
+      {todoList.map((todoItem) =&gt; (
+        &lt;TodoItem item={todoItem} /&gt;
+      ))}
+    &lt;/&gt;
+  );
+}
+</pre></div>
+</div>
+<p>주석 처리된 컴포넌트는 다음 섹션에서 구현합니다.</p>
+<p>할일 요소를 생성하기 위해 <code class="docutils literal notranslate"><span class="pre">todoListState</span></code> 내용을 업데이트 할 setter 함수에 접근해야 합니다. useSetRecoilState() 훅스를 사용하여 TodoItemCreator 컴포넌트에서 setter 함수를 가져올 수 있습니다.</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span>function TodoItemCreator() {
+  const [inputValue, setInputValue] = useState(&#39;&#39;);
+  const setTodoList = useSetRecoilState(todoListState);
+
+  const addItem = () =&gt; {
+    setTodoList((oldTodoList) =&gt; [
+      ...oldTodoList,
+      {
+        id: getId(),
+        text: inputValue,
+        isComplete: false,
+      },
+    ]);
+  };
+
+	return (
+    &lt;div&gt;
+      &lt;input type=&quot;text&quot; value={inputValue} onChange={e =&gt; setInputValue(e.target.value)} /&gt;
+      &lt;button onClick={addItem}&gt;Add&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+
+// utility for creating unique Id
+let id = 0;
+function getId() {
+  return id++;
+}
+</pre></div>
+</div>
+<p>이전 할 일 목록을 기반으로 새 할 일 목록을 만들 수 있도록 업데이터 형식의 setter 함수를 사용합니다.</p>
+<p>TodoItem의 구성 요소는 텍스트를 변경하고 항목을 삭제하며 목록의 값을 표시해야 합니다. useRecoilState()를 사용항여 todoListState를 읽고 항목 텍스트를 업데이트하고 완료된 것으로 표시한 후 삭제하는데 사용되는 setter 함수를 가져옵니다.</p>
+<blockquote>
+<div><p>참고: useRecoilState() 훅스는 useState() 훅스처럼 첫 번째 인자는 상태를 두 번째 인자는 setter 함수를 반환합니다.</p>
+</div></blockquote>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span>function TodoItem({item}) {
+  const [todoList, setTodoList] = useRecoilState(todoListState);
+  const index = todoList.findIndex((listItem) =&gt; listItem === item);
+
+  const editItemText = ({target: {value}}) =&gt; {
+    const newList = replaceItemAtIndex(todoList, index, {
+      ...item,
+      text: value,
+    });
+
+    setTodoList(newList);
+  };
+
+  const toggleItemCompletion = () =&gt; {
+    const newList = replaceItemAtIndex(todoList, index, {
+      ...item,
+      isComplete: !item.isComplete,
+    });
+
+    setTodoList(newList);
+  };
+
+  const deleteItem = () =&gt; {
+    const newList = removeItemAtIndex(todoList, index);
+
+    setTodoList(newList);
+  };
+
+  return (
+    &lt;div&gt;
+      &lt;input type=&quot;text&quot; value={item.text} onChange={editItemText} /&gt;
+      &lt;input
+        type=&quot;checkbox&quot;
+        checked={item.isComplete}
+        onChange={toggleItemCompletion}
+      /&gt;
+      &lt;button onClick={deleteItem}&gt;X&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+
+function replaceItemAtIndex(arr, index, newValue) {
+  return [...arr.slice(0, index), newValue, ...arr.slice(index + 1)];
+}
+
+function removeItemAtIndex(arr, index) {
+  return [...arr.slice(0, index), ...arr.slice(index + 1)];
+}
+</pre></div>
+</div>
+<p>우리는 다음 섹션에서는 selector를 이용하여 목록을 다음단계로 변경하는 방법을 다룹니다.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="selector.html" class="btn btn-neutral float-right" title="Selectors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="intro.html" class="btn btn-neutral float-left" title="Intro" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, pjt3591oo
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

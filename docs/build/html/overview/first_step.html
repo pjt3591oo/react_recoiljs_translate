@@ -1,0 +1,382 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>First step &mdash; Nest.js Translate 5 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Controllers" href="controllers.html" />
+    <link rel="prev" title="Introduction" href="../introduction/introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Nest.js Translate
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">INTRODUCTION</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/introduction.html">Introduction</a></li>
+</ul>
+<p class="caption"><span class="caption-text">OVERVIEW</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">First step</a></li>
+<li class="toctree-l1"><a class="reference internal" href="controllers.html">Controllers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="providers.html">Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="middleware.html">Middleware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exception_filters.html">Exception Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipes.html">Pipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guards.html">Guards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interceptors.html">Interceptors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_decorators.html">Custom Decorators</a></li>
+</ul>
+<p class="caption"><span class="caption-text">FUNDAMENTALS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fundamentals/custom_providers.html">Custom Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fundamentals/asynchronous_providers.html">Asynchronous Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fundamentals/dynamic_modules.html">Dynamic Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fundamentals/circular_dependency.html">Circular Dependency</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fundamentals/injection_scopes.html">Injection Scopes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fundamentals/lifecycle_events.html">Lifecycle Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fundamentals/platform_agnosticism.html">Platform Agnosticism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fundamentals/testing.html">Testing</a></li>
+</ul>
+<p class="caption"><span class="caption-text">TECHNIQUES</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../techniques/authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techniques/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techniques/mongo.html">Mongo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techniques/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techniques/validation.html">Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techniques/caching.html">Caching</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techniques/serialization.html">Serialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techniques/task_scheduling.html">Task Scheduling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techniques/compression.html">Compression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techniques/security.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techniques/queues.html">Queues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techniques/logger.html">Logger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techniques/file_upload.html">File Upload</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techniques/http_module.html">Http Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techniques/model-view-controller.html">Model-View_Controller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techniques/performance.html">Performance</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GRAPHQL</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../graphql/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graphql/resolvers.html">Resolver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graphql/mutations.html">Mutations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graphql/subscriptions.html">Subscriptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graphql/scalars.html">Scalars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graphql/tooling.html">Tolling</a></li>
+</ul>
+<p class="caption"><span class="caption-text">WEBSOCKETS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../websockets/gateways.html">Gateways</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../websockets/exception_filters.html">Exception Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../websockets/pipes.html">Pipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../websockets/guards.html">Guards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../websockets/interceptors.html">Interceptors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../websockets/adapters.html">Adapters</a></li>
+</ul>
+<p class="caption"><span class="caption-text">MICROSERVICES</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../microservices/overview.html">Overvice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../microservices/redis.html">Redis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../microservices/MQTT.html">MQTT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../microservices/NATS.html">NATS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../microservices/RabbitMQ.html">RabbitMQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../microservices/gRPC.html">gRPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../microservices/exception_filters.html">Exception Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../microservices/pipes.html">Pipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../microservices/guards.html">Guards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../microservices/interceptors.html">Interceptors</a></li>
+</ul>
+<p class="caption"><span class="caption-text">APPLICATION CONTEXT</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../application_context.html">Application Context</a></li>
+</ul>
+<p class="caption"><span class="caption-text">CLI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cli/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/workspaces.html">Workspaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/libraries.html">Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/scripts.html">Scripts</a></li>
+</ul>
+<p class="caption"><span class="caption-text">RECIPES</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/TypeORM.html">TypeORM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/mongoose.html">Mongoose</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/sequelize.html">Sequelize</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/CQRS.html">CQRS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/OpenAPI.html">OpenAPI (Swagger)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/prisma.html">Prisma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/health_checks.html">Health Checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/CRUD_utilities.html">CRUD Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/hot_reload.html">Hot Loads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/serve_static.html">Server Static</a></li>
+</ul>
+<p class="caption"><span class="caption-text">FAQ</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../faq/HTTP_adapter.html">HTTP adapter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/Global_path_prefix.html">Global path prefix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/Hybrid_application.html">Hybrid application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/HTTPS_multiple_servers.html">HTTPS &amp; multiple servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/examples.html">Example</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Migration Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../migration_guide.html">Migration Guide</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Nest.js Translate</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>First step</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/overview/first_step.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="first-step">
+<h1>First step<a class="headerlink" href="#first-step" title="Permalink to this headline">¶</a></h1>
+<p>이번 섹션에서는 Nest의 <strong>기본핵심</strong> 을 배울것입니다. Nest 응용프로그램의 필수요소에 익숙해지기 위해, 입문서적 차원에서 많은 부분의 기본의 CRUD를 제공하는 응용프로그램을 구축합니다.</p>
+<div class="section" id="id1">
+<h2>언어<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>우리는 <strong><code class="docutils literal notranslate"><span class="pre">Typescript</span></code></strong> 를 좋아하지만, 무엇보다도 <strong><code class="docutils literal notranslate"><span class="pre">Node.js</span></code></strong> 좋아합니다. 그렇기 때문에 Nest는 <strong>순수 자바스크립트</strong>, 타입스크립트와 호환됩니다. Nest는 최신 언어 기능을 활용하므로 바닐라 JavaScript와 함께 사용하려면 <strong><code class="docutils literal notranslate"><span class="pre">Babel</span></code></strong> 컴파일러가 필요합니다.</p>
+<p>우리는 대부분 우리가 제공하는 예제에서 TypeScript를 사용하지만 항상 코드 스니펫을 바닐라 JavaScript 구문으로 전환 할 수 있습니다.</p>
+</div>
+<div class="section" id="id2">
+<h2>전제조건<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>여러분의 운영체제에 <strong><code class="docutils literal notranslate"><span class="pre">Nede.js</span></code></strong>(&gt;=8.9.0)이 반드시 있어야 합니다.</p>
+</div>
+<div class="section" id="id3">
+<h2>설치<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Nest CLI를 사용하여 새 프로젝트를 설정하는 것은 매우 간단합니다. npm을 설치하면 OS 터미널에서 다음 명령을 사용하여 새 Nest 프로젝트를 만들 수 있습니다.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ npm i -g @nestjs/cli
+$ nest new project-name
+</pre></div>
+</div>
+<p>프로젝트 디렉터리가 생성되고, 노드 모듈과 몇 개의 다른 상용구 파일이 설치되며, <code class="docutils literal notranslate"><span class="pre">**src/**</span></code> 디렉터리가 생성되어 여러 코어 파일로 채워집니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>src
+  ├──app.controller.ts
+  ├──app.module.ts
+  └──main.ts
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">app.controller.ts</span></code></strong> 단일 경로(라우트)의 기본 컨트롤러 샘플</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">app.module.ts</span></code></strong> 어플리케이션의 최상위 모듈</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">main.ts</span></code></strong> 핵심 함수 <strong><code class="docutils literal notranslate"><span class="pre">NestFactory</span></code></strong> 를 사용하여 Nest 애플리케이션 인스턴스를 작성하는 애플리케이션의 엔트리(entry) 파일입니다.</p>
+<p>main.ts에는 비동기 함수가 포함되어있어 응용 프로그램을 부트스트랩합니다.</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="c1">// main.ts</span>
+
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">NestFactory</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@nestjs/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">AppModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./app.module&#39;</span><span class="p">;</span>
+
+<span class="nx">async</span> <span class="kd">function</span> <span class="nx">bootstrap() {</span>
+  <span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">NestFactory</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">AppModule</span><span class="p">);</span>
+  <span class="nx">await</span> <span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">bootstrap</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>Nest 어플리케이션 인스턴스를 생성하기 위해, 핵심 클래스 <strong><code class="docutils literal notranslate"><span class="pre">NestFactory</span></code></strong> 를 사용합니다. **<code class="docutils literal notranslate"><span class="pre">NestFactory</span></code>**는 어플리케이션 인스턴스를 생성하기 위해 허용하기 위해 몇가지 정적 메서드를 제공합니다. <strong><code class="docutils literal notranslate"><span class="pre">create()</span></code></strong> 메서드는  <strong><code class="docutils literal notranslate"><span class="pre">INestApplication</span></code></strong> 인터페이스를 수행하는 애플리케이션 객체를 리턴합니다. 이 객체는 다음 장에서 설명하는 일련의 메소드를 제공합니다. 위의 <strong><code class="docutils literal notranslate"><span class="pre">main.ts</span></code></strong> 예제에서 HTTP 리스너를 시작하면 응용 프로그램이 인바운드 HTTP 요청을 기다릴 수 있습니다.</p>
+<p>Nest CLI로 스캐 폴딩 된 프로젝트는 개발자가 각 모듈을 전용 디렉터리에 보관하는 규칙을 따르도록 권장하는 초기 프로젝트 구조를 만듭니다.</p>
+</div>
+<div class="section" id="id4">
+<h2>플랫폼<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Nest의 목표는 플랫폼의 영향을 받지않는 프레임워크입니다. 플랫폼 독립성을 통해 개발자는 여러 유형의 응용프로그램에서 활용할 수 있는 재사용 가능하도록 합니다. 기술적으로 Nest는 어댑터가 생성되면 모든 Node HTTP 프레임워크와 동작할 수 있습니다. 기본적으로 지원되는 두 가지 HTTP 플랫폼 인 <strong><code class="docutils literal notranslate"><span class="pre">express</span></code></strong>, <strong><code class="docutils literal notranslate"><span class="pre">fastify</span></code></strong> 있습니다. 필요에 가장 적합한 것을 선택할 수 있습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">platform</span><span class="o">-</span><span class="n">express</span><span class="p">:</span> <span class="n">express잘</span> <span class="n">알다시피</span> <span class="n">node에서</span> <span class="n">제공하는</span> <span class="n">경량화된</span> <span class="n">웹</span> <span class="n">프레임워크입니다</span><span class="o">.</span> <span class="n">커뮤니티에서</span> <span class="n">구현한</span> <span class="n">많은</span> <span class="n">리소스를</span> <span class="n">갖추고</span> <span class="n">테스트</span> <span class="n">된</span> <span class="n">프로덕션용</span> <span class="n">라이브러리입니다</span><span class="o">.</span> <span class="nd">@nestjs</span><span class="o">/</span><span class="n">platform</span><span class="o">-</span><span class="n">express</span> <span class="n">패키지는</span> <span class="n">기본적으로</span> <span class="n">사용됩니다</span><span class="o">.</span> <span class="n">많은</span> <span class="n">사용자들은</span> <span class="n">익스프레스를</span> <span class="n">잘</span> <span class="n">이용하고</span> <span class="n">있으며</span><span class="p">,</span> <span class="n">그것을</span> <span class="n">가능하게</span> <span class="n">하기</span> <span class="n">위해</span> <span class="n">어떤</span> <span class="n">조치도</span> <span class="n">취할</span> <span class="n">필요가</span> <span class="n">없습니다</span><span class="o">.</span>
+
+<span class="n">platform</span><span class="o">-</span><span class="n">fastify</span><span class="p">:</span> <span class="n">Fastify는</span> <span class="n">최고의</span> <span class="n">효율과</span> <span class="n">속도를</span> <span class="n">제공하는</span> <span class="n">데</span> <span class="n">매우</span> <span class="n">초점을</span> <span class="n">맞춘</span> <span class="n">고성능과</span> <span class="n">낮은</span> <span class="n">오버헤드</span> <span class="n">프레임워크입니다</span><span class="o">.</span> <span class="n">여기에서</span> <span class="n">사용법을</span> <span class="n">읽어</span> <span class="n">보십시오</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>어떤 플랫폼을 사용하든, 자체 애플리케이션 인터페이스를 노출합니다. 이것들은 각각 <strong><code class="docutils literal notranslate"><span class="pre">NestExpressApplication</span></code></strong>, <strong><code class="docutils literal notranslate"><span class="pre">NestFastifyApplication</span></code></strong> 확인할 수 있습니다.</p>
+<p>아래 예와 같이 유형을 NestFactory.create() 메소드로 전달하면 앱 개체는 특정 플랫폼에만 사용할 수 있는 메소드를 갖게 됩니다. 그러나 기본 플랫폼 API에 실제로 액세스하려는 경우가 아니라면 유형을 지정할 필요가 없습니다.</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">NestFactory</span><span class="p">.</span><span class="nx">create</span><span class="o">&lt;</span><span class="nx">NestExpressApplication</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">AppModule</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>어플리케이션 실행<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>설치 프로세스가 완료되면 OS 명령 프롬프트에서 다음 명령을 실행하여 HTTP 요청을 수신하는 응용 프로그램을 시작합니다.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ npm run start
+</pre></div>
+</div>
+<p>이 명령은 src/main.ts 파일에 정의한 포트에서 HTTP 서버를 수신하여 앱을 시작합니다. 응용 프로그램이 실행되고 나면 브라우저를 열고 http://localhost:3000/로 접속하면, Hello World! 메시지를 확인할 수 있습니다.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="controllers.html" class="btn btn-neutral float-right" title="Controllers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../introduction/introduction.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, pjt3591oo
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
